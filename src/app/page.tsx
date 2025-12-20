@@ -132,7 +132,7 @@ export default function Home() {
       </section>
       {/* 教育经历 */}
       <section id={SECTION.EDUCATION}>
-        <div className="flex min-h-0 flex-col gap-y-4">
+        <div className="flex min-h-0 flex-col gap-y-5">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.EDUCATION)}</h2>
           </BlurFade>
@@ -153,7 +153,7 @@ export default function Home() {
       </section>
       {/* 专业技能 */}
       <section id={SECTION.SKILLS}>
-        <div className="flex min-h-0 flex-col gap-y-4">
+        <div className="flex min-h-0 flex-col gap-y-5">
           <BlurFade inView>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.SKILLS)}</h2>
           </BlurFade>
@@ -203,7 +203,7 @@ export default function Home() {
               </div>
             ) : (
               <div className="relative">
-                {(posts || []).slice(0, 5).map((post: PostCardProps) => (
+                {(posts || []).map((post: PostCardProps) => (
                   <BlurFade key={post.post.spec.slug} inView>
                     <PostCard {...post} />
                   </BlurFade>

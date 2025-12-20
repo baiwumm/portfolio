@@ -1,6 +1,6 @@
 "use client"
 
-import { BookOpenText, House, Mail, Moon, Sun } from "lucide-react"
+import { House, Mail, Moon, Sun } from "lucide-react"
 import { AnimatePresence, motion } from 'motion/react';
 import Link from "next/link"
 import { useTheme } from "next-themes";
@@ -35,11 +35,6 @@ export default function DockCard() {
 
   const socials: Social[] = [
     {
-      name: "博客",
-      url: 'https://baiwumm.com',
-      icon: <BookOpenText />,
-    },
-    {
       name: "GitHub",
       url: `https://github.com/${pkg.author.name}`,
       icon: <GithubIcon />
@@ -62,14 +57,14 @@ export default function DockCard() {
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Link href='/' aria-label="主页" target="_blank">
+              <Link href='https://baiwumm.com' aria-label="主页" target="_blank">
                 <RippleButton variant="ghost" className="rounded-full" size='icon'>
                   <House />
                 </RippleButton>
               </Link>
             </TooltipTrigger>
             <TooltipContent>
-              <p>主页</p>
+              <p>博客</p>
             </TooltipContent>
           </Tooltip>
         </DockIcon>
@@ -92,15 +87,15 @@ export default function DockCard() {
         ))}
         <Separator orientation="vertical" className="h-full" />
         <DockIcon>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <ThemeTogglerPrimitive
-                theme={theme as ThemeSelection}
-                resolvedTheme={resolvedTheme as Resolved}
-                setTheme={setTheme}
-                direction='ltr'
-              >
-                {({ toggleTheme }) => (
+          <ThemeTogglerPrimitive
+            theme={theme as ThemeSelection}
+            resolvedTheme={resolvedTheme as Resolved}
+            setTheme={setTheme}
+            direction='ltr'
+          >
+            {({ toggleTheme }) => (
+              <Tooltip>
+                <TooltipTrigger asChild>
                   <RippleButton
                     aria-label="ThemeToggle"
                     variant="ghost"
@@ -134,14 +129,13 @@ export default function DockCard() {
                       )}
                     </AnimatePresence>
                   </RippleButton>
-                )}
-              </ThemeTogglerPrimitive>
-
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>主题模式</p>
-            </TooltipContent>
-          </Tooltip>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>主题模式</p>
+                </TooltipContent>
+              </Tooltip>
+            )}
+          </ThemeTogglerPrimitive>
         </DockIcon>
       </Dock>
     </div>

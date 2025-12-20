@@ -102,21 +102,14 @@ export const data = {
     {
       title: "谜叶象限",
       href: "https://baiwumm.com",
-      description: "每一片叶子，都是未完成的坐标系,架构于 Halo 及增强体验的 THYUU/星度主题",
+      description: "每一片叶子，都是未完成的坐标系,架构于 Halo 及增强体验的 THYUU/星度主题。",
       tags: ["Halo", "Thyuu", "星度"],
-      links: [
-        {
-          type: "Website",
-          href: "https://baiwumm.com",
-          icon: "globe",
-        }
-      ],
       video: "/portfolio/www.mp4"
     },
     {
       title: "Vue3 Admin",
       href: "https://vue3.baiwumm.com",
-      description: "前端基于 Soybean Admin二次开发，后端基于 Nest.js + Prisma 的全栈后台应用",
+      description: "前端基于 Soybean Admin二次开发，后端基于 Nest.js + Prisma 的全栈后台应用。",
       tags: [
         "Vue.js",
         "Nest.js",
@@ -124,13 +117,6 @@ export const data = {
         "Prisma",
         "Vite.js",
         "Ant Design Vue"
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://vue3.baiwumm.com",
-          icon: "globe",
-        }
       ],
       repo: "vue3-admin",
       video: "/portfolio/vue3-admin.mp4"
@@ -145,13 +131,6 @@ export const data = {
         "Tailwindcss",
         "Motion",
       ],
-      links: [
-        {
-          type: "Website",
-          href: "https://site.baiwumm.com",
-          icon: "globe",
-        }
-      ],
       repo: "dream-site",
       video: "/portfolio/dream-site.mp4"
     },
@@ -165,32 +144,18 @@ export const data = {
         "HeroUI",
         "Tailwindcss",
       ],
-      links: [
-        {
-          type: "Website",
-          href: "https://hot.baiwumm.com",
-          icon: "globe",
-        }
-      ],
       repo: "next-daily-hot",
       video: "/portfolio/daily-hot.mp4"
     },
     {
       title: "Easy Api",
       href: "https://api.baiwumm.com",
-      description: "一个基于 Nuxt 4 构建的简单易用的 API 服务平台，提供多种实用的 API 接口和管理后台",
+      description: "一个基于 Nuxt 4 构建的简单易用的 API 服务平台，提供多种实用的 API 接口和管理后台。",
       tags: [
         "Nuxt.js",
         "Supabase",
         "Tailwindcss",
         "Nuxt UI"
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://api.baiwumm.com",
-          icon: "globe",
-        }
       ],
       video: "/portfolio/easy-api.mp4"
     },
@@ -203,13 +168,6 @@ export const data = {
         "Native UI",
         "Tailwindcss",
         "Vite.js"
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://cover.baiwumm.com",
-          icon: "globe",
-        },
       ],
       repo: "cover-magic",
       video: "/portfolio/cover-magic.mp4"
@@ -224,32 +182,18 @@ export const data = {
         "Tailwindcss",
         "Motion"
       ],
-      links: [
-        {
-          type: "Website",
-          href: "https://monitor.baiwumm.com",
-          icon: "globe",
-        },
-      ],
       repo: "UptimeKeeper",
       video: "/portfolio/uptime-keeper.mp4"
     },
     {
       title: "WeSplit",
       href: "https://split.baiwumm.com",
-      description: "让聚餐、旅行、聚会的费用分摊变得简单透明，自动计算最优转账方案，告别复杂的账目计算",
+      description: "让聚餐、旅行、聚会的费用分摊变得简单透明，自动计算最优转账方案，告别复杂的账目计算。",
       tags: [
         "React.js",
         "Vite.js",
         "Tailwindcss",
         "Zustand"
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://split.baiwumm.com",
-          icon: "globe",
-        }
       ],
       repo: "WeSplit",
       video: "/portfolio/we-split.mp4"
