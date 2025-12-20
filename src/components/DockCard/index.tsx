@@ -4,7 +4,7 @@ import { BookOpenText, House, Mail, Moon, Sun } from "lucide-react"
 import { AnimatePresence, motion } from 'motion/react';
 import Link from "next/link"
 import { useTheme } from "next-themes";
-import { type MouseEvent, type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 import {
   Tooltip,
@@ -12,6 +12,11 @@ import {
   TooltipTrigger
 } from "@/components/animate-ui/components/animate/tooltip"
 import { RippleButton } from "@/components/animate-ui/components/buttons/ripple"
+import {
+  type Resolved,
+  type ThemeSelection,
+  ThemeToggler as ThemeTogglerPrimitive
+} from '@/components/animate-ui/primitives/effects/theme-toggler';
 import { Dock, DockIcon } from "@/components/ui/dock";
 import { Separator } from "@/components/ui/separator";
 import { THEME_MODE } from '@/enums';
@@ -25,7 +30,7 @@ type Social = {
 }
 
 export default function DockCard() {
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const isDark = theme === THEME_MODE.DARK;
 
   const socials: Social[] = [
@@ -50,44 +55,6 @@ export default function DockCard() {
       icon: <Mail />
     }
   ]
-
-  // 判断是否支持 startViewTransition API
-  const enableTransitions = () =>
-    "startViewTransition" in document && window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
-
-  // 切换主题
-  const performThemeToggle = async (x: number, y: number) => {
-
-    if (!enableTransitions()) {
-      setTheme(isDark ? THEME_MODE.LIGHT : THEME_MODE.DARK);
-      return;
-    }
-
-    const clipPath = [
-      `circle(0px at ${x}px ${y}px)`,
-      `circle(${Math.hypot(
-        Math.max(x, innerWidth - x),
-        Math.max(y, innerHeight - y)
-      )}px at ${x}px ${y}px)`,
-    ];
-
-    await document.startViewTransition(async () => {
-      setTheme(isDark ? THEME_MODE.LIGHT : THEME_MODE.DARK);
-    }).ready;
-
-    document.documentElement.animate(
-      { clipPath: !isDark ? clipPath.reverse() : clipPath },
-      {
-        duration: 500,
-        easing: "ease-in",
-        pseudoElement: `::view-transition-${!isDark ? "old" : "new"}(root)`,
-      }
-    );
-  };
-  const handleToggleTheme = (event: MouseEvent<HTMLButtonElement>) => {
-    const { clientX: x, clientY: y } = event;
-    performThemeToggle(x, y);
-  };
   return (
     <div className="fixed inset-x-0 bottom-2 z-30 mx-auto flex origin-bottom h-full max-h-12">
       <div className="fixed bottom-0 inset-x-0 h-14 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
@@ -96,7 +63,7 @@ export default function DockCard() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link href='/' aria-label="主页" target="_blank">
-                <RippleButton variant="ghost" className="rounded-full">
+                <RippleButton variant="ghost" className="rounded-full" size='icon'>
                   <House />
                 </RippleButton>
               </Link>
@@ -112,7 +79,7 @@ export default function DockCard() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link href={url} aria-label={name} target="_blank">
-                  <RippleButton variant="ghost" className="rounded-full">
+                  <RippleButton variant="ghost" className="rounded-full" size='icon'>
                     {icon}
                   </RippleButton>
                 </Link>
@@ -127,37 +94,49 @@ export default function DockCard() {
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
-              <RippleButton
-                aria-label="ThemeToggle"
-                variant="ghost" className="rounded-full"
-                onClick={handleToggleTheme}
+              <ThemeTogglerPrimitive
+                theme={theme as ThemeSelection}
+                resolvedTheme={resolvedTheme as Resolved}
+                setTheme={setTheme}
+                direction='ltr'
               >
-                <AnimatePresence mode="wait" initial={false}>
-                  {isDark ? (
-                    <motion.div
-                      key="moon"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
-                      transition={{ duration: 0.2, ease: 'easeInOut' }}
-                      className="text-neutral-800 dark:text-neutral-200"
-                    >
-                      <Moon className="h-[1.2rem] w-[1.2rem]" />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="sun"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
-                      transition={{ duration: 0.2, ease: 'easeInOut' }}
-                      className="text-neutral-800 dark:text-neutral-200"
-                    >
-                      <Sun className="h-[1.2rem] w-[1.2rem]" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </RippleButton>
+                {({ toggleTheme }) => (
+                  <RippleButton
+                    aria-label="ThemeToggle"
+                    variant="ghost"
+                    className="rounded-full"
+                    size='icon'
+                    onClick={() => toggleTheme(isDark ? THEME_MODE.LIGHT : THEME_MODE.DARK)}
+                  >
+                    <AnimatePresence mode="wait" initial={false}>
+                      {isDark ? (
+                        <motion.div
+                          key="moon"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          transition={{ duration: 0.2, ease: 'easeInOut' }}
+                          className="text-neutral-800 dark:text-neutral-200"
+                        >
+                          <Moon className="h-[1.2rem] w-[1.2rem]" />
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="sun"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          transition={{ duration: 0.2, ease: 'easeInOut' }}
+                          className="text-neutral-800 dark:text-neutral-200"
+                        >
+                          <Sun className="h-[1.2rem] w-[1.2rem]" />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </RippleButton>
+                )}
+              </ThemeTogglerPrimitive>
+
             </TooltipTrigger>
             <TooltipContent>
               <p>主题模式</p>

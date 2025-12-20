@@ -80,7 +80,7 @@ function GithubStars({
     }
 
     const timeout = setTimeout(() => {
-      fetch(`https://api.github.com/repos/${username}/${repo}`)
+      fetch(`/api/github/${username}/${repo}`)
         .then((response) => response.json())
         .then((data) => {
           if (data && typeof data.stargazers_count === 'number') {
