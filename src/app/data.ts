@@ -1,34 +1,54 @@
 export const data = {
   work: [
     {
-      company: "阿里巴巴集团 - 淘天事业部",
-      href: "https://www.alibaba.com",
-      badges: [],
-      title: "高级前端开发工程师",
-      logoUrl: "/portfolio/alibaba.png",
-      start: "2021.03",
-      end: "至今",
-      description: "负责淘宝主站“百亿补贴”频道的商家运营平台前端架构与开发，采用 React 18 + TypeScript + qiankun 微前端架构，支持多团队并行开发与独立部署。",
+      "company": "腾讯 - 微信事业群",
+      "href": "https://www.tencent.com",
+      "badges": [],
+      "title": "高级前端开发工程师",
+      "logoUrl": "/portfolio/tencent.png",
+      "start": "2020.07",
+      "end": "至今",
+      "description": "负责微信小程序开放平台核心工具链的前端架构设计与开发，主导实现基于 Vite + React 18 + TypeScript 的 Monorepo 工程体系，支撑日均千万级开发者使用。"
     },
     {
-      company: "字节跳动 - 工具链开发",
-      href: "https://www.bytedance.com",
-      badges: [],
-      title: "前端开发专家 - 效率工具与基建方向",
-      logoUrl: "/portfolio/bytedance.png",
-      start: "2019.07",
-      end: "2021.02",
-      description: "作为核心开发者，参与打造公司级可视化搭建平台“Orion”，服务内部超 5000 名运营和产品人员。设计并实现 DSL（领域特定语言） 和 Schema 驱动渲染引擎，支持将可视化编排结果一键生成 React/Vue 多框架代码。",
+      "company": "字节跳动 - 抖音电商",
+      "href": "https://www.bytedance.com",
+      "badges": [],
+      "title": "前端技术专家",
+      "logoUrl": "/portfolio/bytedance.png",
+      "start": "2019.05",
+      "end": "2023.02",
+      "description": "主导抖音电商商家后台系统的前端微服务化改造，基于 React 18 + Module Federation 实现跨团队模块联邦，系统 QPS 提升 300%，页面加载性能优化 40%。"
     },
     {
-      company: "腾讯集团 - 平台与内容事业群",
-      href: "https://www.tencent.com",
-      badges: [],
-      title: "前端工程师 - 内容与互动方向",
-      logoUrl: "/portfolio/tencent.png",
-      start: "2017.09",
-      end: "2019.06",
-      description: "负责 QQ 空间“小世界”（短视频信息流） 频道的前端开发与重构工作。使用 Vue.js 技术栈，深度参与从 Vue 1.x 到 Vue 2.x 的迁移与架构升级。",
+      "company": "蚂蚁集团 - 数字科技事业部",
+      "href": "https://www.antgroup.com",
+      "badges": [],
+      "title": "前端架构师",
+      "logoUrl": "/portfolio/antgroup.png",
+      "start": "2018.09",
+      "end": "2022.11",
+      "description": "负责蚂蚁链 BaaS 平台前端中台体系建设，设计并落地了跨产品线的低代码搭建方案，基于 Vue 3 + TypeScript 的插件化架构，提升产研效率 60% 以上。"
+    },
+    {
+      "company": "美团 - 到店事业群",
+      "href": "https://www.meituan.com",
+      "badges": [],
+      "title": "资深前端工程师",
+      "logoUrl": "/portfolio/meituan.png",
+      "start": "2017.03",
+      "end": "2021.06",
+      "description": "主导美团商家CRM系统重写与性能优化，采用微前端 + Web Worker 技术方案，实现复杂业务模块的隔离与并行计算，系统响应时间降低 65%。"
+    },
+    {
+      "company": "百度 - 智能云事业群",
+      "href": "https://www.baidu.com",
+      "badges": [],
+      "title": "前端技术负责人",
+      "logoUrl": "/portfolio/baidu.png",
+      "start": "2015.11",
+      "end": "2019.08",
+      "description": "负责百度云控制台全线产品前端技术体系构建，主导从 AngularJS 到 Vue 2 的技术栈迁移，设计统一物料库与 CLI 工具链，支撑 50+ 云产品快速迭代。"
     }
   ],
   education: [
@@ -54,7 +74,15 @@ export const data = {
       degree: "工程硕士 (M.Eng.)",
       logoUrl: "/portfolio/berkeley.svg",
       start: "2018.07",
-      end: "2018.08",
+      end: "2020.08",
+    },
+    {
+      "school": "北京大学",
+      "href": "https://www.pku.edu.cn",
+      "degree": "理学学士 (B.S.)",
+      "logoUrl": "/portfolio/pku.png",
+      "start": "2020.09",
+      "end": "2024.06"
     },
   ],
   skills: [

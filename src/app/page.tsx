@@ -1,6 +1,7 @@
 "use client"
 
 import { useRequest } from 'ahooks';
+import { useEffect, useState } from 'react';
 
 import { data } from './data';
 
@@ -17,6 +18,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { SECTION } from '@/enums';
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
   const BLUR_FADE_DELAY = 0.04;
   const name = process.env.NEXT_PUBLIC_NAME!;
   // 获取文章
@@ -30,6 +32,15 @@ export default function Home() {
     const result = await res.json();
     return result?.data?.items || []
   });
+
+  useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!mounted) {
+    return null
+  }
   return (
     <main className="flex flex-col min-h-dvh space-y-10 max-w-3xl mx-auto px-4 py-8 pb-18">
       {/* Hero Section */}
@@ -121,7 +132,7 @@ export default function Home() {
       </section>
       {/* 教育经历 */}
       <section id={SECTION.EDUCATION}>
-        <div className="flex min-h-0 flex-col gap-y-3">
+        <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.EDUCATION)}</h2>
           </BlurFade>
@@ -142,7 +153,7 @@ export default function Home() {
       </section>
       {/* 专业技能 */}
       <section id={SECTION.SKILLS}>
-        <div className="flex min-h-0 flex-col gap-y-3">
+        <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade inView>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.SKILLS)}</h2>
           </BlurFade>
