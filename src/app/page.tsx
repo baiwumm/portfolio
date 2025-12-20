@@ -17,6 +17,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { SECTION } from '@/enums';
 
 export default function Home() {
+  const BLUR_FADE_DELAY = 0.04;
   const name = process.env.NEXT_PUBLIC_NAME!;
   // 获取文章
   const { data: posts = [], loading: postLoading } = useRequest(async () => {
@@ -33,33 +34,33 @@ export default function Home() {
     <main className="flex flex-col min-h-dvh space-y-10 max-w-3xl mx-auto px-4 py-8 pb-18">
       {/* Hero Section */}
       <section id={SECTION.HERO}>
-        <BlurFade inView>
-          <div className="mx-auto w-full space-y-8">
-            <div className="gap-2 flex justify-between items-center">
-              <div className="flex-col flex flex-1 space-y-1.5">
-                <BlurText
-                  className="text-lg font-bold tracking-tighter sm:text-4xl/none"
-                  text={`Hi, 我是${name} 👋`}
-                />
-                <BlurText
-                  className="max-w-150 md:text-lg"
-                  text={process.env.NEXT_PUBLIC_DESC!}
-                />
-              </div>
+        <div className="mx-auto w-full space-y-8">
+          <div className="gap-2 flex justify-between items-center">
+            <div className="flex-col flex flex-1 space-y-1.5">
+              <BlurText
+                className="text-lg font-bold tracking-tighter sm:text-4xl/none"
+                text={`Hi, 我是${name} 👋`}
+              />
+              <BlurText
+                className="max-w-150 md:text-lg"
+                text={process.env.NEXT_PUBLIC_DESC!}
+              />
+            </div>
+            <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28">
                 <AvatarImage alt={name} src='/me.jpg' />
                 <AvatarFallback>{name.slice(0, 2)}</AvatarFallback>
               </Avatar>
-            </div>
+            </BlurFade>
           </div>
-        </BlurFade>
+        </div>
       </section>
       {/* 关于 */}
       <section id={SECTION.ABOUT}>
-        <BlurFade inView>
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">{SECTION.label(SECTION.ABOUT)}</h2>
         </BlurFade>
-        <BlurFade inView>
+        <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <div className="flex flex-col justify-center text-sm text-muted-foreground gap-1 mt-1">
             <p>擅长用 React/Vue 构建用户界面，对 工程化 和 性能优化 充满好奇</p>
             <p>正在向 {" "}
@@ -87,10 +88,10 @@ export default function Home() {
       {/* Github Activity */}
       <section id={SECTION.ACTIVITY}>
         <div className="flex flex-col gap-4">
-          <BlurFade inView>
+          <BlurFade delay={BLUR_FADE_DELAY * 5}>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.ACTIVITY)}</h2>
           </BlurFade>
-          <BlurFade inView>
+          <BlurFade delay={BLUR_FADE_DELAY * 6}>
             <GithubActivity />
           </BlurFade>
         </div>
@@ -98,11 +99,11 @@ export default function Home() {
       {/* 工作经历 */}
       <section id={SECTION.WORK}>
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade inView>
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.WORK)}</h2>
           </BlurFade>
-          {data.work.map((work) => (
-            <BlurFade key={work.company} inView>
+          {data.work.map((work, index) => (
+            <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 8 + index * 0.05}>
               <ResumeCard
                 key={work.company}
                 logoUrl={work.logoUrl}
@@ -121,11 +122,11 @@ export default function Home() {
       {/* 教育经历 */}
       <section id={SECTION.EDUCATION}>
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade inView>
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.EDUCATION)}</h2>
           </BlurFade>
-          {data.education.map((education) => (
-            <BlurFade key={education.school} inView>
+          {data.education.map((education, index) => (
+            <BlurFade key={education.school} delay={BLUR_FADE_DELAY * 9 + index * 0.05}>
               <ResumeCard
                 key={education.school}
                 href={education.href}

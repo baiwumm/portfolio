@@ -126,7 +126,7 @@ function ThemeToggler({
   );
 
   return (
-    <React.Fragment {...props}>
+    <>
       {typeof children === 'function'
         ? children({
           effective: current.effective,
@@ -135,7 +135,7 @@ function ThemeToggler({
         })
         : children}
       <style>{`::view-transition-old(root), ::view-transition-new(root){animation:none;mix-blend-mode:normal;}`}</style>
-    </React.Fragment>
+    </>
   );
 }
 
