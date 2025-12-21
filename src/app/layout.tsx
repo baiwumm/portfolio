@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
             <FullLoading />
             <BackTop />
             <ScrollProgress />
+            <Analytics />
           </TooltipProvider>
         </NextThemesProvider>
       </body>
