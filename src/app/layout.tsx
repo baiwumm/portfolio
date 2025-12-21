@@ -12,7 +12,7 @@ import { THEME_MODE } from "@/enums";
 import pkg from "#/package.json";
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_NAME,
+  title: `${process.env.NEXT_PUBLIC_NAME} - ${process.env.NEXT_PUBLIC_APP_NAME}`,
   description: process.env.NEXT_PUBLIC_DESC,
   generator: process.env.NEXT_PUBLIC_APP_NAME,
   applicationName: process.env.NEXT_PUBLIC_APP_NAME,
@@ -26,6 +26,36 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  openGraph: {
+    title: process.env.NEXT_PUBLIC_NAME,
+    description: process.env.NEXT_PUBLIC_DESC,
+    url: 'https://portfolio.baiwumm.com',
+    siteName: process.env.NEXT_PUBLIC_NAME,
+    images: [
+      {
+        url: 'https://portfolio.baiwumm.com/og.png',
+        width: 1200,
+        height: 630,
+      }
+    ],
+    videos: [
+      {
+        url: 'https://portfolio.baiwumm.com/demo.mp4',
+        width: 1272,
+        height: 928,
+      },
+    ],
+    locale: 'zh_CN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: process.env.NEXT_PUBLIC_NAME,
+    description: process.env.NEXT_PUBLIC_DESC,
+    creator: 'baiwumm',
+    images: ['https://portfolio.baiwumm.com/og.png'],
+  },
+  manifest: 'https://portfolio.baiwumm.com/manifest.json'
 };
 
 export default function RootLayout({

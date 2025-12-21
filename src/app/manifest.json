@@ -1,6 +1,7 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "白雾茫茫丶",
+  "short_name": "Portfolio",
+  "description": "一名扎根深圳的前端新手程序员，在互联网行业深耕多年，从最初的兴趣驱动到如今的职业探索，始终保持着对技术的敬畏与热爱",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +16,8 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#000000",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "lang": "zh-CN"
 }
