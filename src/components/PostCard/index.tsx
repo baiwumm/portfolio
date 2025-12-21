@@ -2,7 +2,7 @@
  * @Author: 白雾茫茫丶<baiwumm.com>
  * @Date: 2025-12-19 11:10:50
  * @LastEditors: 白雾茫茫丶<baiwumm.com>
- * @LastEditTime: 2025-12-20 14:41:49
+ * @LastEditTime: 2025-12-21 18:37:58
  * @Description: 文章卡片
  */
 import { Folder, Tag } from 'lucide-react';
@@ -13,6 +13,7 @@ import { type FC } from 'react';
 
 import { RippleButton } from "@/components/animate-ui/components/buttons/ripple"
 import { Badge } from "@/components/ui/badge";
+import pkg from '#/package.json'
 
 export type PostCardProps = {
   categories: any[];
@@ -22,7 +23,7 @@ export type PostCardProps = {
 }
 
 const PostCard: FC<PostCardProps> = ({ categories = [], post = {}, stats = {}, tags = [] }) => {
-  const BLOG_URL = 'https://baiwumm.com';
+  const BLOG_URL = pkg.author.url;
 
   const formatDate = (date: Date): string => {
     return date.toLocaleDateString("zh-CN", {

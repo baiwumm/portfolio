@@ -13,6 +13,18 @@ import pkg from "#/package.json";
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_NAME,
   description: process.env.NEXT_PUBLIC_DESC,
+  generator: process.env.NEXT_PUBLIC_APP_NAME,
+  applicationName: process.env.NEXT_PUBLIC_APP_NAME,
+  referrer: 'origin-when-cross-origin',
+  keywords: [process.env.NEXT_PUBLIC_APP_NAME!, 'Next.js', 'Shadcn UI', '个人简历', '模板'],
+  authors: [{ name: process.env.NEXT_PUBLIC_NAME, url: pkg.author.url }],
+  creator: process.env.NEXT_PUBLIC_NAME,
+  publisher: process.env.NEXT_PUBLIC_NAME,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
