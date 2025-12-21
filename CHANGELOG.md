@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.0](https://github.com/baiwumm/portfolio/compare/1.0.0...1.1.0) (2025-12-21)
+
+### ✨ Features | 新功能
+
+* 添加 vercel 统计 ([3d9a1a2](https://github.com/baiwumm/portfolio/commit/3d9a1a268e3f26242af6df8ed12974235647009c))
+* 完成首页功能的开发 ([4c2aaed](https://github.com/baiwumm/portfolio/commit/4c2aaed38ade51b42c2b9994e9eb253f82435e17))
+* 完善 Metadata 数据 ([c454606](https://github.com/baiwumm/portfolio/commit/c454606f78debc8330515dbeff77e3b4bb16becf))
+* 完善 SEO 配置 ([1de677b](https://github.com/baiwumm/portfolio/commit/1de677b8a49def9a3e8bfc479b28beea63876171))
+
+### 💄 Styles | 风格
+
+* 样式排版优化 ([3d7511c](https://github.com/baiwumm/portfolio/commit/3d7511c2c866d99b92fc285289182dcfeb5adb63))
+
+### ⚡ Performance Improvements | 性能优化
+
+* 细节调整 ([cc867ff](https://github.com/baiwumm/portfolio/commit/cc867ffb4bc7e77ec0b585453c43ee0d9fa96e61))
+* 细节优化，提高用户体验 ([f7f5e7c](https://github.com/baiwumm/portfolio/commit/f7f5e7cb2c69ff76f6e6cd3a271ee6e807fd20c1))
+* 优化工作和教育经历 ([c3ccbff](https://github.com/baiwumm/portfolio/commit/c3ccbffd6c9ca892c0751196c0cab891f1ca8775))
+
 ## 1.0.0 (2025-12-19)
 
 ### ✨ Features | 新功能
