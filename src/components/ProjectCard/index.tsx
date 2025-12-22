@@ -65,7 +65,13 @@ export default function ProjectCard({
         </div>
       </Link>
       <CardHeader className="px-3 py-1 border-none">
-        <CardTitle className="text-base">{title}</CardTitle>
+        <CardTitle className="text-base flex justify-between items-center gap-2">
+          <div className="relative flex">
+            <div className={cn('size-2 rounded-full', 'bg-green-500 dark:bg-green-400')} />
+            <div className={cn('absolute inset-0 size-2 rounded-full animate-ping opacity-75', 'bg-green-500 dark:bg-green-400')} />
+          </div>
+          <span>{title}</span>
+        </CardTitle>
         <div className="prose max-w-full text-pretty text-xs text-muted-foreground overflow-hidden line-clamp-3 wrap-break-word">
           {description}
         </div>
