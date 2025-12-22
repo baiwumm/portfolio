@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://portfolio.baiwumm.com/sitemap.xml',
+    sitemap: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/sitemap.xml`,
   }
 }

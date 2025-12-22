@@ -29,18 +29,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: process.env.NEXT_PUBLIC_NAME,
     description: process.env.NEXT_PUBLIC_DESC,
-    url: 'https://portfolio.baiwumm.com',
+    url: process.env.NEXT_PUBLIC_APP_DOMAIN,
     siteName: process.env.NEXT_PUBLIC_NAME,
     images: [
       {
-        url: 'https://portfolio.baiwumm.com/og.png',
+        url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/og.png`,
         width: 1200,
         height: 630,
       }
     ],
     videos: [
       {
-        url: 'https://portfolio.baiwumm.com/demo.mp4',
+        url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/demo.mp4`,
         width: 1272,
         height: 928,
       },
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
     title: process.env.NEXT_PUBLIC_NAME,
     description: process.env.NEXT_PUBLIC_DESC,
     creator: 'baiwumm',
-    images: ['https://portfolio.baiwumm.com/og.png'],
+    images: [`${process.env.NEXT_PUBLIC_APP_DOMAIN}/og.png`],
   },
-  manifest: 'https://portfolio.baiwumm.com/manifest.json'
+  manifest: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/manifest.json`
 };
 
 export default function RootLayout({
