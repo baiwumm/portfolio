@@ -123,7 +123,7 @@ export default function Home() {
                 subtitle={work.title}
                 href={work.href}
                 badges={work.badges}
-                period={`${work.start} - ${work.end ?? "Present"}`}
+                period={`${work.start} - ${work.end ?? "至今"}`}
                 description={work.description}
               />
             </BlurFade>

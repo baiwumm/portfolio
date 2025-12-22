@@ -7,7 +7,6 @@ export const data = {
       "title": "高级前端开发工程师",
       "logoUrl": "/portfolio/tencent.png",
       "start": "2020.07",
-      "end": "至今",
       "description": "负责微信小程序开放平台核心工具链的前端架构设计与开发，主导实现基于 Vite + React 18 + TypeScript 的 Monorepo 工程体系，支撑日均千万级开发者使用。"
     },
     {
