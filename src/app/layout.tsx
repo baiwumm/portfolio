@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 import "./globals.css";
+import { ClarityAnalytics, GoogleAnalytics, UmamiAnalytics } from '@/components/Analytics';
 import { TooltipProvider } from '@/components/animate-ui/components/animate/tooltip';
 import BackTop from '@/components/BackTop'; // 回到顶部
 import DockCard from '@/components/DockCard';
@@ -69,6 +70,12 @@ export default function RootLayout({
         {/* 插入版本 meta */}
         <meta name="version" content={pkg.version} />
         <link rel="stylesheet" href="https://cdn.baiwumm.com/fonts/MapleMono-CN-Regular/result.css" />
+        {/* umami - 站点统计分析 */}
+        <UmamiAnalytics />
+        {/* Microsoft Clarity 统计代码 */}
+        <ClarityAnalytics />
+        {/* Google 统计 */}
+        <GoogleAnalytics />
       </head>
       <body>
         <NextThemesProvider attribute="class" defaultTheme={process.env.NEXT_PUBLIC_THEME || THEME_MODE.LIGHT}>

@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.16",
+    "@microsoft/clarity": "^1.0.2",
     "@release-it/conventional-changelog": "^10.0.4",
     "@vercel/analytics": "^1.6.1",
     "ahooks": "^3.9.6",
