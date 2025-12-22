@@ -33,7 +33,7 @@ export default function ProjectCard({
   return (
     <Card
       className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full gap-2"
+        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full gap-2 rounded-lg"
       }
     >
       <Link
@@ -61,7 +61,7 @@ export default function ProjectCard({
           />
         ) : null}
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-linear-to-t from-black/60 to-transparent flex items-end p-1 pl-4">
-          <span className="text-white font-medium text-sm tracking-wider">{href?.replace("https://", "").replace("www.", "").replace("/", "")}</span>
+          <span className="text-white font-medium text-[13px] tracking-wider">{href?.replace("https://", "").replace("www.", "").replace("/", "")}</span>
         </div>
       </Link>
       <CardHeader className="px-3 py-1 border-none">

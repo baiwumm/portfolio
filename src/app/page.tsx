@@ -45,56 +45,56 @@ export default function Home() {
     <main className="flex flex-col min-h-dvh space-y-10 max-w-3xl mx-auto px-4 py-8 pb-18">
       {/* Hero Section */}
       <section id={SECTION.HERO}>
-        <div className="mx-auto w-full space-y-8">
-          <div className="gap-2 flex justify-between items-center">
-            <div className="flex-col flex flex-1 space-y-1.5">
-              <BlurText
-                className="text-lg font-bold tracking-tighter sm:text-4xl/none"
-                text={`Hi, 我是${name} 👋`}
-              />
-              <BlurText
-                className="max-w-150 md:text-lg"
-                text={process.env.NEXT_PUBLIC_DESC!}
-              />
-            </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28">
-                <AvatarImage alt={name} src='/me.jpg' />
-                <AvatarFallback>{name.slice(0, 2)}</AvatarFallback>
-              </Avatar>
-            </BlurFade>
+        <div className="flex justify-between items-center">
+          <div className="flex-col flex flex-1 gap-4">
+            <BlurText
+              className="text-lg font-bold tracking-tighter sm:text-4xl/none"
+              text={`Hi, 我是${name} 👋`}
+            />
+            <BlurText
+              className="max-w-150 md:text-lg"
+              text={process.env.NEXT_PUBLIC_DESC!}
+            />
           </div>
+          <BlurFade delay={BLUR_FADE_DELAY}>
+            <Avatar className="size-28">
+              <AvatarImage alt={name} src='/me.jpg' />
+              <AvatarFallback>{name.slice(0, 2)}</AvatarFallback>
+            </Avatar>
+          </BlurFade>
         </div>
       </section>
       {/* 关于 */}
       <section id={SECTION.ABOUT}>
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">{SECTION.label(SECTION.ABOUT)}</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <div className="flex flex-col justify-center text-sm text-muted-foreground gap-1 mt-1">
-            <p>擅长用 React/Vue 构建用户界面，对 工程化 和 性能优化 充满好奇</p>
-            <p>正在向 {" "}
-              <Highlighter action="highlight" color="#87CEFA">
-                <span className="text-white/85">
-                  「更优雅的代码」
-                </span>
-              </Highlighter> {" "}
-              和 {" "}
-              <Highlighter action="highlight" color="#87CEFA">{" "}
-                <span className="text-white/85">
-                  「更高效的协作」
-                </span>
-              </Highlighter>
-              方向努力</p>
-            “代码是写给人看的，只是顺便让机器能运行”
-            <p className="font-bold">
-              <Highlighter action="underline" color="#FF9800">
-                希望我的代码能像热带气候一样——永远热情，偶尔风暴 🌪️
-              </Highlighter>
-            </p>
-          </div>
-        </BlurFade>
+        <div className="flex flex-col gap-2">
+          <BlurFade delay={BLUR_FADE_DELAY * 3}>
+            <h2 className="text-xl font-bold">{SECTION.label(SECTION.ABOUT)}</h2>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 4}>
+            <div className="flex flex-col justify-center text-sm text-muted-foreground gap-1">
+              <p>擅长用 React/Vue 构建用户界面，对 工程化 和 性能优化 充满好奇</p>
+              <p>正在向 {" "}
+                <Highlighter action="highlight" color="#87CEFA">
+                  <span className="text-white/85">
+                    「更优雅的代码」
+                  </span>
+                </Highlighter> {" "}
+                和 {" "}
+                <Highlighter action="highlight" color="#87CEFA">{" "}
+                  <span className="text-white/85">
+                    「更高效的协作」
+                  </span>
+                </Highlighter>
+                方向努力</p>
+              “代码是写给人看的，只是顺便让机器能运行”
+              <p className="font-bold">
+                <Highlighter action="underline" color="#FF9800">
+                  希望我的代码能像热带气候一样——永远热情，偶尔风暴 🌪️
+                </Highlighter>
+              </p>
+            </div>
+          </BlurFade>
+        </div>
       </section>
       {/* Github Activity */}
       <section id={SECTION.ACTIVITY}>
@@ -109,7 +109,7 @@ export default function Home() {
       </section>
       {/* 工作经历 */}
       <section id={SECTION.WORK}>
-        <div className="flex min-h-0 flex-col gap-y-3">
+        <div className="flex min-h-0 flex-col gap-4">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.WORK)}</h2>
           </BlurFade>
@@ -132,7 +132,7 @@ export default function Home() {
       </section>
       {/* 教育经历 */}
       <section id={SECTION.EDUCATION}>
-        <div className="flex min-h-0 flex-col gap-y-5">
+        <div className="flex min-h-0 flex-col gap-4">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.EDUCATION)}</h2>
           </BlurFade>
@@ -153,7 +153,7 @@ export default function Home() {
       </section>
       {/* 专业技能 */}
       <section id={SECTION.SKILLS}>
-        <div className="flex min-h-0 flex-col gap-y-5">
+        <div className="flex min-h-0 flex-col gap-4">
           <BlurFade inView>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.SKILLS)}</h2>
           </BlurFade>
@@ -174,7 +174,7 @@ export default function Home() {
       </section>
       {/* 个人作品 */}
       <section id={SECTION.PROJECTS}>
-        <div className="flex min-h-0 flex-col gap-y-3">
+        <div className="flex min-h-0 flex-col gap-4">
           <BlurFade inView>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.PROJECTS)}</h2>
           </BlurFade>
@@ -192,7 +192,7 @@ export default function Home() {
         </div>
       </section>
       <section id={SECTION.POSTS}>
-        <div className="flex min-h-0 flex-col gap-y-3">
+        <div className="flex min-h-0 flex-col gap-4">
           <BlurFade inView>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.POSTS)}</h2>
           </BlurFade>
