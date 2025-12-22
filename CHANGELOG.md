@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.5](https://github.com/baiwumm/portfolio/compare/1.1.4...1.1.5) (2025-12-22)
+
+### ✨ Features | 新功能
+
+* 添加统计代码 ([c8d1449](https://github.com/baiwumm/portfolio/commit/c8d144900638ed0716f92c376cacf605a51b887e))
+
 ## [1.1.4](https://github.com/baiwumm/portfolio/compare/1.1.3...1.1.4) (2025-12-22)
 
 ### ⚡ Performance Improvements | 性能优化
