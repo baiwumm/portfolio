@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.2](https://github.com/baiwumm/portfolio/compare/1.1.1...1.1.2) (2025-12-22)
+
+### ✨ Features | 新功能
+
+* 细节调整 ([be90fcd](https://github.com/baiwumm/portfolio/commit/be90fcd17fecfdbcb02442387c067cb05e7eaa97))
+
 ## [1.1.1](https://github.com/baiwumm/portfolio/compare/1.1.0...1.1.1) (2025-12-22)
 
 ### ✨ Features | 新功能
