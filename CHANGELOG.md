@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.1](https://github.com/baiwumm/portfolio/compare/1.1.0...1.1.1) (2025-12-22)
+
+### ✨ Features | 新功能
+
+* 添加生产域名环境变量 ([7196324](https://github.com/baiwumm/portfolio/commit/71963241b5e3f4036f452d573fc22a092a9a2d78))
+* 添加微信等信息 ([ae89ecf](https://github.com/baiwumm/portfolio/commit/ae89ecf1d0f42470ecea3e8d8c26936436ef6968))
+
+### 💄 Styles | 风格
+
+* 样式调整 ([68214ff](https://github.com/baiwumm/portfolio/commit/68214ffb719edc473c6b6519ed61740ad233c298))
+* 样式微调 ([03561dc](https://github.com/baiwumm/portfolio/commit/03561dca82b4fbae345b14af3cafc323a61f2b83))
+
 ## [1.1.0](https://github.com/baiwumm/portfolio/compare/1.0.0...1.1.0) (2025-12-21)
 
 ### ✨ Features | 新功能
