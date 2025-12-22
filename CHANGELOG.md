@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.4](https://github.com/baiwumm/portfolio/compare/1.1.3...1.1.4) (2025-12-22)
+
+### ⚡ Performance Improvements | 性能优化
+
+* 删除没用的引用 ([8967a51](https://github.com/baiwumm/portfolio/commit/8967a5105467faa2de528814167cf60a2f6a4c44))
+
 ## [1.1.3](https://github.com/baiwumm/portfolio/compare/1.1.2...1.1.3) (2025-12-22)
 
 ## [1.1.2](https://github.com/baiwumm/portfolio/compare/1.1.1...1.1.2) (2025-12-22)
