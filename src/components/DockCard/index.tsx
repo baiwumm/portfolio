@@ -13,16 +13,7 @@ import {
   TooltipTrigger
 } from "@/components/animate-ui/components/animate/tooltip"
 import { RippleButton } from "@/components/animate-ui/components/buttons/ripple"
-import {
-  Popover,
-  PopoverClose,
-  type PopoverCloseProps,
-  PopoverContent,
-  type PopoverContentProps,
-  type PopoverProps,
-  PopoverTrigger,
-  type PopoverTriggerProps,
-} from "@/components/animate-ui/components/radix/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/animate-ui/components/radix/popover";
 import {
   type Resolved,
   type ThemeSelection,
