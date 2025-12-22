@@ -2,6 +2,7 @@
 
 import { House, Mail, Moon, Sun } from "lucide-react"
 import { AnimatePresence, motion } from 'motion/react';
+import Image from "next/image";
 import Link from "next/link"
 import { useTheme } from "next-themes";
 import { type ReactNode } from 'react'
@@ -13,6 +14,16 @@ import {
 } from "@/components/animate-ui/components/animate/tooltip"
 import { RippleButton } from "@/components/animate-ui/components/buttons/ripple"
 import {
+  Popover,
+  PopoverClose,
+  type PopoverCloseProps,
+  PopoverContent,
+  type PopoverContentProps,
+  type PopoverProps,
+  PopoverTrigger,
+  type PopoverTriggerProps,
+} from "@/components/animate-ui/components/radix/popover";
+import {
   type Resolved,
   type ThemeSelection,
   ThemeToggler as ThemeTogglerPrimitive
@@ -20,13 +31,18 @@ import {
 import { Dock, DockIcon } from "@/components/ui/dock";
 import { Separator } from "@/components/ui/separator";
 import { THEME_MODE } from '@/enums';
-import { GithubIcon, JuejinIcon } from '@/lib/icons';
+import { GithubIcon, JuejinIcon, WechatIcon } from '@/lib/icons';
 import pkg from '#/package.json';
 
 type Social = {
   name: string;
   url: string;
   icon: ReactNode;
+}
+
+type Wechat = {
+  name: string;
+  image: string;
 }
 
 export default function DockCard() {
@@ -50,6 +66,12 @@ export default function DockCard() {
       icon: <Mail />
     }
   ]
+
+  const wechat: Wechat[] = [
+    { name: "微信", image: '/wechat.jpg' },
+    { name: "公众号", image: '/wechatOA.jpg' },
+    { name: "小程序", image: '/app.jpg' }
+  ]
   return (
     <div className="fixed inset-x-0 bottom-2 z-30 mx-auto flex origin-bottom h-full max-h-12">
       <div className="fixed bottom-0 inset-x-0 h-14 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
@@ -69,6 +91,25 @@ export default function DockCard() {
           </Tooltip>
         </DockIcon>
         <Separator orientation="vertical" className="h-full" />
+        <DockIcon>
+          <Popover>
+            <PopoverTrigger asChild>
+              <RippleButton variant="ghost" className="rounded-full" size='icon'>
+                <WechatIcon />
+              </RippleButton>
+            </PopoverTrigger>
+            <PopoverContent className="p-2">
+              <div className="grid grid-cols-3 gap-1">
+                {wechat.map(({ name, image }, index) => (
+                  <div key={index} className="flex flex-col items-center justify-center text-xs text-muted-foreground">
+                    <Image src={image} width={80} height={80} alt={name} />
+                    <p>{name}</p>
+                  </div>
+                ))}
+              </div>
+            </PopoverContent>
+          </Popover>
+        </DockIcon>
         {socials.map(({ name, url, icon }) => (
           <DockIcon key={name}>
             <Tooltip>
