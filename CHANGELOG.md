@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.6](https://github.com/baiwumm/portfolio/compare/1.1.5...1.1.6) (2025-12-23)
+
+### ✨ Features | 新功能
+
+* Halo 文章列表添加只发布的文章 ([3c29a83](https://github.com/baiwumm/portfolio/commit/3c29a83a86cc20c7f7b9fa52928edd666ff70dfa))
+* update README.md ([6385748](https://github.com/baiwumm/portfolio/commit/6385748ae3f031e4abca9f428584bd937cb68b68))
+
 ## [1.1.5](https://github.com/baiwumm/portfolio/compare/1.1.4...1.1.5) (2025-12-22)
 
 ### ✨ Features | 新功能
