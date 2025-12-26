@@ -180,7 +180,7 @@ export default function Home() {
           <BlurFade inView>
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.PROJECTS)}</h2>
           </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-200 mx-auto">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 ">
             {data.projects.map((project, id) => (
               <BlurFade
                 key={project.title}
