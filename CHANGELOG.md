@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.1](https://github.com/baiwumm/portfolio/compare/1.2.0...1.2.1) (2025-12-26)
+
+### 💄 Styles | 风格
+
+* 样式微调 ([45e9734](https://github.com/baiwumm/portfolio/commit/45e9734e500c68c8535172a42237726efc8a067d))
+
 ## [1.2.0](https://github.com/baiwumm/portfolio/compare/1.1.6...1.2.0) (2025-12-26)
 
 ### ✨ Features | 新功能
