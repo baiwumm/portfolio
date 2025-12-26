@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0](https://github.com/baiwumm/portfolio/compare/1.1.6...1.2.0) (2025-12-26)
+
+### ✨ Features | 新功能
+
+* 新增 Github 贡献日历组件 ([b0fa301](https://github.com/baiwumm/portfolio/commit/b0fa301c58a43438236f86945f2ee4949d49201e))
+
+### ⚡ Performance Improvements | 性能优化
+
+* 删除没用的依赖和代码 ([8a14eae](https://github.com/baiwumm/portfolio/commit/8a14eae1d29f82ef5030a8c96905be6bdb6e7a8e))
+
 ## [1.1.6](https://github.com/baiwumm/portfolio/compare/1.1.5...1.1.6) (2025-12-23)
 
 ### ✨ Features | 新功能
