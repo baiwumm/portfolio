@@ -8,6 +8,7 @@ import { data } from './data';
 import BlurFade from '@/components/BlurFade';
 import BlurText from '@/components/BlurText';
 import GithubActivity from '@/components/GithubActivity';
+import GithubCalendar from '@/components/GithubCalendar';
 import Highlighter from '@/components/Highlighter';
 import LogoLoop from '@/components/LogoLoop';
 import PostCard, { type PostCardProps } from '@/components/PostCard';
@@ -42,7 +43,7 @@ export default function Home() {
     return null
   }
   return (
-    <main className="flex flex-col min-h-dvh space-y-10 max-w-3xl mx-auto px-4 py-8 pb-18">
+    <main className="flex flex-col min-h-dvh space-y-10 max-w-4xl mx-auto px-4 py-8 pb-18">
       {/* Hero Section */}
       <section id={SECTION.HERO}>
         <div className="flex justify-between items-center">
@@ -103,7 +104,8 @@ export default function Home() {
             <h2 className="text-xl font-bold">{SECTION.label(SECTION.ACTIVITY)}</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 6}>
-            <GithubActivity />
+            {/* <GithubActivity /> */}
+            <GithubCalendar />
           </BlurFade>
         </div>
       </section>

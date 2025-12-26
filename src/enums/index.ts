@@ -23,7 +23,7 @@ export const THEME_MODE = Enum({
 export const SECTION = Enum({
   HERO: { value: 'hero', label: '作者' },
   ABOUT: { value: 'about', label: '关于' },
-  ACTIVITY: { value: 'github-activity', label: 'Github Activity' },
+  ACTIVITY: { value: 'github-activity', label: 'Github 贡献日历' },
   WORK: { value: 'work', label: '工作经历' },
   EDUCATION: { value: 'education', label: '教育经历' },
   SKILLS: { value: 'skills', label: '专业技能' },
